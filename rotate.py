@@ -28,14 +28,31 @@ class Solution:
     def rotate(self,matrix):
         # type matrix: List[List[int]]
         # return: List[List[int]]
-        
+        # memory space
         # TODO: Write code below to return a nested list with the solution to the prompt
-        mat_width = len(matrix)
-        copy = [[0 for x in range(mat_width)] for i in range(mat_width)]
-        for i in  range(0, len(mat_width)):
-            for j in range (0, len(mat_width)):
-                 copy[i][j] = matrix[j][i]
-        return copy
+        # mat_width = len(matrix)
+        # copy = [[0 for x in range(mat_width)] for i in range(mat_width)]
+        # for i in  range((mat_width), -1, -1, -1):
+        #     for j in range (0, len(mat_width)):
+        #          copy[i][j] = matrix[j][i]
+        temp = []
+        for c in range(len(matrix)):
+            row = []
+            for i in range(len(matrix)-1, -1, -1):
+                row.append(matrix[i][c])
+            temp.append(row)
+        return temp
+        # return copy
+        # row0 = 0
+        # col0 = 0
+        # row1 = len(matrix)-1
+        # col1 = len(matrix)-1
+        # while(row0<row1 and col0<col1):
+        #     for i in range(col1-col0):
+        #         temp = matrix[row0][col0+i]
+        #         matrix[row0][col0+i] = matrix[row1-i][col0]
+        #         matrix[row1-i][col0] = matrix
+                
         
 
 def main():
